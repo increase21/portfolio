@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^([\w\d\-_\.\/]*)$ index.php?view=$1 [L,QSA]
+
+Header set Cache-Control "max-age=31536000"
